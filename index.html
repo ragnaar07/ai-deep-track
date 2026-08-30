@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="A day-by-day, math-first AI learning roadmap with curated video and reading links." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>AI Deep Track</title>
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="brand-mark">A</div>
+      <div>
+        <div class="brand">AI DEEP TRACK</div>
+        <div class="brand-sub">math → models → research</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button id="todayBtn" class="ghost-btn">TODAY</button>
+      <button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-stat">
+        <span>PROGRAM</span>
+        <strong id="programLength">336 DAYS</strong>
+      </div>
+      <div class="progress-line"><div id="sidebarProgress"></div></div>
+      <div class="sidebar-stat two-col">
+        <div><span>DONE</span><strong id="doneCount">0</strong></div>
+        <div><span>STREAK</span><strong id="streakCount">0</strong></div>
+      </div>
+      <nav id="phaseNav" class="phase-nav"></nav>
+      <div class="sidebar-note">Progress is saved locally on this device. No account required.</div>
+    </aside>
+
+    <main class="main">
+      <section class="hero panel">
+        <div class="hero-left">
+          <div class="eyebrow">YOUR DEEP AI CURRICULUM</div>
+          <h1>Understand the math.<br/>Build the models.<br/><span>Know why they work.</span></h1>
+          <p>One focused mission every day. Video + reading + derivation + code + review. Built for someone who already knows basic Python and basic machine learning.</p>
+          <div class="hero-meta">
+            <div><span>PACE</span><strong>2–3 h/day</strong></div>
+            <div><span>FORMAT</span><strong>6 study + 1 review</strong></div>
+            <div><span>STACK</span><strong>NumPy → PyTorch</strong></div>
+          </div>
+        </div>
+        <div class="progress-orbit" aria-label="Overall progress">
+          <div class="orbit-ring" id="orbitRing"><div><strong id="progressPercent">0%</strong><span>COMPLETE</span></div></div>
+        </div>
+      </section>
+
+      <section class="today-section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow neon">TODAY'S MISSION</div>
+            <h2 id="todayDate">—</h2>
+          </div>
+          <div class="day-badge" id="dayBadge">DAY 1 / 336</div>
+        </div>
+
+        <article id="todayCard" class="mission-card panel"></article>
+      </section>
+
+      <section class="roadmap-section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">FULL ROADMAP</div>
+            <h2>Every day, already mapped.</h2>
+          </div>
+          <div class="filters">
+            <input id="searchInput" type="search" placeholder="Search roadmap…" />
+            <select id="phaseFilter"><option value="all">All phases</option></select>
+          </div>
+        </div>
+        <div id="roadmapGrid" class="roadmap-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="dayDialog" class="modal"></dialog>
+  <dialog id="settingsDialog" class="modal settings-modal">
+    <form method="dialog">
+      <div class="modal-head"><div><div class="eyebrow neon">SETTINGS</div><h3>Study schedule</h3></div><button class="icon-btn">✕</button></div>
+      <label class="field-label" for="startDate">Program start date</label>
+      <input id="startDate" type="date" />
+      <p class="muted">Day 1 is tied to this date. Changing it shifts which mission appears as “today”. Your completed tasks stay saved.</p>
+      <div class="setting-row"><div><strong>Start from today</strong><span>Reset Day 1 to the current date.</span></div><button id="resetStartBtn" type="button" class="ghost-btn">RESET DATE</button></div>
+      <div class="setting-row danger"><div><strong>Clear progress</strong><span>Delete all completion history on this device.</span></div><button id="clearProgressBtn" type="button" class="ghost-btn danger-btn">CLEAR</button></div>
+      <button class="primary-btn full" value="close">DONE</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

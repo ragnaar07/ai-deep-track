@@ -1,0 +1,10 @@
+{
+  "name": "AI Deep Track",
+  "short_name": "AI Deep Track",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "description": "A math-first daily AI curriculum and progress tracker.",
+  "icons": []
+}
